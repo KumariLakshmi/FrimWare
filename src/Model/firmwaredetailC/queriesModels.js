@@ -11,7 +11,7 @@ const DetailC=require('./firmwaredetailCModels')
 
 // Defines the queries
 module.exports = {
-    firmwaredetailC: {
+    detailC: {
     type: new GraphQLList(type),
     args: {
         Name: {
@@ -30,7 +30,7 @@ module.exports = {
     },
     resolve: DetailC.findMatching.bind(DetailC)
 },
-detailC: {
+firmwaredetailC: {
     type,
     args: {
         ID: {

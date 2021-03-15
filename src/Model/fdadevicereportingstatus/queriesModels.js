@@ -1,39 +1,37 @@
+
 const { GraphQLList,
     GraphQLID,
     GraphQLString,
-    GraphQLBoolean,
-    GraphQLInt,
-    GraphQLFloat
+    GraphQLBoolean
 } = require('graphql')
 const type = require('./type')
 // const mutation = require('./mutations')
-const Deviceinfo=require('./devicefirmwareinfoModels')
+const Reportingstatus = require('./fdadevicereportingstatusModels')
 
 // Defines the queries
 module.exports = {
-    deviceInfo: {
+    reportingstatus: {
     type: new GraphQLList(type),
     args: {
-        ID: {
-            type: GraphQLID
-        },
-        IPConfigured: {
+        DeviceId: {
             type: GraphQLString
         },
-        Port: {
-            type: GraphQLInt
+        packetsequenceno: {
+            type: GraphQLString
+        },
+        imei:{
+            type: GraphQLString
         }
-    
     },
-    resolve: Deviceinfo.findMatching.bind(Deviceinfo)
+    resolve: Reportingstatus.findMatching.bind(Reportingstatus)
 },
-devicefirmwareinfo: {
+fdadevicereportingstatus: {
     type,
     args: {
         ID: {
             type: GraphQLID
         }
     },
-    resolve: Deviceinfo.getByID.bind(Deviceinfo)
+    resolve: Reportingstatus.getByID.bind(Reportingstatus)
 }
 }

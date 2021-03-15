@@ -13,8 +13,9 @@ class App {
     }
     applyMiddleware() {
         this.expressApp.use(bodyParser.json())
-        new Routes (this.expressApp)
         this.expressApp.use(cors())
+        new Routes (this.expressApp)
+       
     }
 
     run() {
