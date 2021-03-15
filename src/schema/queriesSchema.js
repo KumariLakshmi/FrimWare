@@ -13,7 +13,7 @@ module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
         // Device:deviceQueres.device,
-        deviceType: deviceQueres.devicetype,
+        devicetype: deviceQueres.devicetype,
         devicepacket:DevicepacketsummaryQuery.devicepacket,
         // summarypacket:DevicepacketsummaryQuery.packetsummary,
         detailC:firmwaredetailcQuery.detailC,
