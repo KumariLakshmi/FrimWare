@@ -2,41 +2,40 @@ const { GraphQLList,
     GraphQLID,
     GraphQLString,
     GraphQLBoolean,
-    GraphQLInt,
-    GraphQLFloat
+    GraphQLInt
 } = require('graphql')
 const type = require('./type')
-// const mutation = require('./mutations')
-const DetailJava=require('./firmwaredetailjavaModels')
+const mutation = require('./mutationsModels')
+const otapcommand = require('./otapcommandModels')
 
 // Defines the queries
 module.exports = {
-    detailJava: {
+    otapcommand: {
     type: new GraphQLList(type),
     args: {
-        Name: {
-            type: GraphQLString
-        },
-        ServerIP: {
-            type: GraphQLString
-        },
-        UserName:{
-            type: GraphQLString
-        },
-        Password:{
-            type:  GraphQLString
-        }
-    
+        PacketID: {
+        type: GraphQLInt
     },
-    resolve: DetailJava.findMatching.bind(DetailJava)
+        DeviceID: {
+            type: GraphQLString
+        },
+        
+        Name:{
+            type: GraphQLString
+        },
+        Message:{
+            type: GraphQLString
+        }
+    },
+    resolve: otapcommand.findMatching.bind(otapcommand)
 },
-firmwaredetailJava: {
+command: {
     type,
     args: {
-        ID: {
+        PacketID: {
             type: GraphQLID
         }
     },
-    resolve: DetailJava.getByID.bind(DetailJava)
+    resolve: otapcommand.getByID.bind(otapcommand)
 }
 }

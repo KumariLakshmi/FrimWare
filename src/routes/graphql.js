@@ -14,7 +14,11 @@ router.get('/', graphqlHTTP({
 router.post('/', graphqlHTTP({
     schema,
     // fdadevicepacketsummary,
-    graphiql: true
+    graphiql: false,
+    // attributes: {
+    //     propertyName: { type:"string", required:true, unique: true }
+    //   },
+    //   autoPK:false
 }))
 
 module.exports = router

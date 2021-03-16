@@ -8,6 +8,7 @@ const firmwaredetailjavaQuery=require('../Model/firmwaredetailjava/queriesModels
 const devicefirmwareinfoQuery=require('../Model/devicefirmwareinfo/queriesModels')
 const devicemasterQuery=require('../Model/devicemaster/queriesModels')
 const fdadevicereportingstatusQuery=require('../Model/fdadevicereportingstatus/queriesModels')
+const otapcommandQuery=require('../Model/otapcommand/queriesModels')
 
 module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -25,7 +26,9 @@ module.exports = new GraphQLObjectType({
         devicemaster:devicemasterQuery.devicemaster,
         // devicemaster:devicemasterQuery.devicedMaster,
         reportingstatus:fdadevicereportingstatusQuery.reportingstatus,
-        // fdadevicereportingstatus:fdadevicereportingstatusQuery.fdadevicereportingstatus
+        // fdadevicereportingstatus:fdadevicereportingstatusQuery.fdadevicereportingstatus,
+        otapcammand:otapcommandQuery.otapcommand,
+        // command:otapcommandQuery.command
 
 
     }
