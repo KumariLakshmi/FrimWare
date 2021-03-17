@@ -25,7 +25,7 @@ module.exports = {
     updateotapcommand: {
         type,
         args: {
-            // ID:     { type: GraphQLID },
+            ID:     { type: GraphQLID },
             // DeviceType:   { type:new GraphQLNonNull(GraphQLString) },
             // IsActive:  { type: new GraphQLNonNull(GraphQLBoolean) },
         },

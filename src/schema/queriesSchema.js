@@ -28,7 +28,7 @@ module.exports = new GraphQLObjectType({
         reportingstatus:fdadevicereportingstatusQuery.reportingstatus,
         // fdadevicereportingstatus:fdadevicereportingstatusQuery.fdadevicereportingstatus,
         otapcammand:otapcommandQuery.otapcommand,
-        // command:otapcommandQuery.command
+        command:otapcommandQuery.command
 
 
     }

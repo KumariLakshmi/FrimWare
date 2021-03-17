@@ -32,7 +32,7 @@ module.exports = {
 command: {
     type,
     args: {
-        PacketID: {
+        ID: {
             type: GraphQLID
         }
     },

@@ -14,6 +14,9 @@ module.exports = new GraphQLObjectType({
     name: 'Otapcommand',
     description: 'a Otapcommand',
     fields: {
+        ID:{            
+            type: new GraphQLNonNull(GraphQLInt)
+                },
         PacketID:{            
             type: new GraphQLNonNull(GraphQLInt)
                 },
