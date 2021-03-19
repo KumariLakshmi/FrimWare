@@ -11,7 +11,7 @@ const fdadevicereportingstatusQuery=require('../Model/fdadevicereportingstatus/q
 const otapcommandQuery=require('../Model/otapcommand/queriesModels')
 const customertypeQuery=require('../Model/customertype/queriesModels')
 const customerQuery=require('../Model/customer/queriesModels')
-// const customeraccountrelationshipQuery=require('../Model/customeraccountrelationship/queriesModels')
+const customeraccountrelationshipQuery=require('../Model/customeraccountrelationship/queriesModels')
 module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
@@ -35,7 +35,7 @@ module.exports = new GraphQLObjectType({
         // customer:customertypeQuery.customer,
         customer:customerQuery.customer,
         // Customers:customerQuery.Customers,
-        // customeraccountrelationshipQuery:customeraccountrelationshipQuery.customeraccountrelationship,
+        customeraccountrelationshipQuery:customeraccountrelationshipQuery.customeraccountrelationship,
         // accountrelationship:customeraccountrelationshipQuery.accountrelationship
 
 
