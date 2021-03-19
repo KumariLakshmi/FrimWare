@@ -5,17 +5,18 @@ class dbqueries {
      * This property can be overriden when the ID column is differet from 'id'
      */
     static get PRIMARY_KEY() {
-        return "ID"
+        return "ID","DeviceType";
     }
 
     /**
      * Retrieves a single entry matching the passed ID
      * @param {Number} id - The entry ID
      */
-    static async find(id) {
+    static async find(DeviceType) {
         return (await mysql.createQuery({
             query: `SELECT * FROM ?? WHERE ?? = ? LIMIT 1;`,
-            params: [this.TABLE_NAME, this.PRIMARY_KEY, id]
+            // query:`SELECT * FROM singledevice WHERE DeviceType IN (${DeviceType})`,
+            params: [this.TABLE_NAME, this.PRIMARY_KEY, DeviceType]
         })).shift()
     }
 

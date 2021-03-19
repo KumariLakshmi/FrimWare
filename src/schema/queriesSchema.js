@@ -9,7 +9,9 @@ const devicefirmwareinfoQuery=require('../Model/devicefirmwareinfo/queriesModels
 const devicemasterQuery=require('../Model/devicemaster/queriesModels')
 const fdadevicereportingstatusQuery=require('../Model/fdadevicereportingstatus/queriesModels')
 const otapcommandQuery=require('../Model/otapcommand/queriesModels')
-
+const customertypeQuery=require('../Model/customertype/queriesModels')
+const customerQuery=require('../Model/customer/queriesModels')
+// const customeraccountrelationshipQuery=require('../Model/customeraccountrelationship/queriesModels')
 module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
@@ -28,7 +30,14 @@ module.exports = new GraphQLObjectType({
         reportingstatus:fdadevicereportingstatusQuery.reportingstatus,
         // fdadevicereportingstatus:fdadevicereportingstatusQuery.fdadevicereportingstatus,
         otapcammand:otapcommandQuery.otapcommand,
-        command:otapcommandQuery.command
+        // command:otapcommandQuery.command,
+        customertype:customertypeQuery.customertype,
+        // customer:customertypeQuery.customer,
+        customer:customerQuery.customer,
+        // Customers:customerQuery.Customers,
+        // customeraccountrelationshipQuery:customeraccountrelationshipQuery.customeraccountrelationship,
+        // accountrelationship:customeraccountrelationshipQuery.accountrelationship
+
 
 
     }
