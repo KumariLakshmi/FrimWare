@@ -1,22 +1,22 @@
-const mysql= require('./mysqlwrapper');
+const mysql= require('../../config/mysqlwrapper');
 class dbqueries {
 
     /**
      * This property can be overriden when the ID column is differet from 'id'
      */
     static get PRIMARY_KEY() {
-        return "ID";
+        return "DeviceType";
     }
 
     /**
      * Retrieves a single entry matching the passed ID
      * @param {Number} id - The entry ID
      */
-    static async find(id) {
+    static async find(DeviceType) {
         return (await mysql.createQuery({
             query: `SELECT * FROM ?? WHERE ?? = ? LIMIT 1;`,
             // query:`SELECT * FROM singledevice WHERE DeviceType IN (${DeviceType})`,
-            params: [this.TABLE_NAME, this.PRIMARY_KEY, id]
+            params: [this.TABLE_NAME, this.PRIMARY_KEY, DeviceType]
         })).shift()
     }
 
@@ -71,12 +71,12 @@ class dbqueries {
      * @param {Object} data - The data fields which will be updated
      * @param {Number} id - The ID of the entry to be updated
      */
-    static update(connection, {data, id}) {
+    static update(connection, {data, DeviceType}) {
         return mysql.createTransactionalQuery({
             query: `UPDATE ??
                     SET ?
                     WHERE ?? = ?;`,
-            params: [this.TABLE_NAME, data, this.PRIMARY_KEY, id],
+            params: [this.TABLE_NAME, data, this.PRIMARY_KEY, DeviceType],
             connection
         })
     }
@@ -100,11 +100,11 @@ class dbqueries {
      * @param {MySQL.Connection} connection - The connection which will do the deletion. It should be immediatelly released unless in a transaction
      * @param {Number} id - The ID of the entry to be deleted
      */
-    static delete(connection, {id}) {
+    static delete(connection, {DeviceType}) {
         return mysql.createTransactionalQuery({
             query: `DELETE FROM  ??
                     WHERE ?? = ?;`,
-            params: [this.TABLE_NAME,this.PRIMARY_KEY, id],
+            params: [this.TABLE_NAME,this.PRIMARY_KEY, DeviceType],
             connection
         })
     }
