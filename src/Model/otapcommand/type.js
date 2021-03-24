@@ -11,24 +11,21 @@ let {
 
 // Defines the type
 module.exports = new GraphQLObjectType({
-    name: 'Otapcommand',
-    description: 'a Otapcommand',
+    name: 'otapcommand',
+    description: 'a otapcommand',
     fields: {
-        ID:{            
+        PacketID: {
             type: new GraphQLNonNull(GraphQLInt)
-                },
-        PacketID:{            
-            type: new GraphQLNonNull(GraphQLInt)
-                },
+        },
         DeviceID: {
             type: new GraphQLNonNull(GraphQLString)
         },
-
         Name: {
             type: new GraphQLNonNull(GraphQLString)
         },
-        Message:{
+        Message: {
             type: new GraphQLNonNull(GraphQLString)
-        }
+        },
+      
     }
 })

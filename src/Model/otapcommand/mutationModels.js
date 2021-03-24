@@ -8,27 +8,29 @@ const {
     GraphQLInt
 } = require('graphql')
 const type = require('./type')
-const  otapcommand = require('./otapcommandModels')
+const Otapcommand = require('./otapcommandModels')
 
 // Defines the mutations
 module.exports = {
     addotapcommand: {
         type,
         args: {
-            PacketID:   { type: new GraphQLNonNull(GraphQLInt) },
-            DeviceID:  { type: new GraphQLNonNull(GraphQLString) },
+            // DeviceType:   { type: new GraphQLNonNull(GraphQLString) },
+            // IsActive:  { type: new GraphQLNonNull(GraphQLBoolean) },
+            PacketID:{ type: new GraphQLNonNull(GraphQLInt) },
+            DeviceID:{ type: new GraphQLNonNull(GraphQLString) },
             Name:{ type: new GraphQLNonNull(GraphQLString) },
             Message:{ type: new GraphQLNonNull(GraphQLString) }
         },
-        resolve: otapcommand.createEntry.bind(otapcommand)
+        resolve: Otapcommand.createEntry.bind(Otapcommand)
     },
     updateotapcommand: {
         type,
         args: {
-            ID:     { type: GraphQLID },
+            ID:     { type: GraphQLInt },
             // DeviceType:   { type:new GraphQLNonNull(GraphQLString) },
             // IsActive:  { type: new GraphQLNonNull(GraphQLBoolean) },
         },
-        resolve: otapcommand.updateEntry.bind(otapcommand)
+        resolve: Otapcommand.updateEntry.bind(Otapcommand)
     }
 }

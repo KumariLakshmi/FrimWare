@@ -1,7 +1,7 @@
 const dbqueries=require('../../config/dbqueries')
 const mysqlwrapper=require('../../config/mysqlwrapper')
 
-class otapcommand extends dbqueries {
+class Otapcommand extends dbqueries {
 
     //  Overrides TABLE_NAME with this class' backing table at MySQL
     static get TABLE_NAME() {
@@ -28,14 +28,12 @@ class otapcommand extends dbqueries {
     }
     // Creates a new device mutations for update 
 
-    static async createEntry(_, {PacketID,DeviceID,Name,Message}) {
+    static async createEntry(_, {PacketID, DeviceID,Name,Message}) {
         const connection = await mysqlwrapper.getConnectionFromPool()
         try {
             let _result = await this.insert(connection, {
                 data: {
-                    // type,
-                    // price
-                     PacketID,DeviceID,Name,Message
+                    PacketID, DeviceID,Name,Message
                 }
             })
 
@@ -49,7 +47,7 @@ class otapcommand extends dbqueries {
     /**
      * Updates a device
      */
-    static async updateEntry(_, { id,type, price}) {
+    static async updateEntry(_, {id, type, price}) {
         const connection = await mysqlwrapper.getConnectionFromPool()
         try {
 
@@ -61,7 +59,7 @@ class otapcommand extends dbqueries {
                 }
             })
 
-            return this.getByID(_, {id}) 
+            return this.getByID(_, {id})
         } finally {
             // Releases the connection
             if (connection != null) connection.release()
@@ -69,4 +67,4 @@ class otapcommand extends dbqueries {
     }
 }
 
-module.exports = otapcommand
+module.exports = Otapcommand

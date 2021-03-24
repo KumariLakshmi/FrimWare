@@ -8,10 +8,10 @@ const firmwaredetailjavaQuery=require('../Model/firmwaredetailjava/queriesModels
 const devicefirmwareinfoQuery=require('../Model/devicefirmwareinfo/queriesModels')
 const devicemasterQuery=require('../Model/devicemaster/queriesModels')
 const fdadevicereportingstatusQuery=require('../Model/fdadevicereportingstatus/queriesModels')
-const otapcommandQuery=require('../Model/otapcommand/queriesModels')
 const customertypeQuery=require('../Model/customertype/queriesModels')
 const customerQuery=require('../Model/customer/queriesModels')
 const customeraccountrelationshipQuery=require('../Model/customeraccountrelationship/queriesModels')
+const otapcommandQuery=require('../Model/otapcommand/queriesModels')
 const otherotapcommandQuery=require('../Model/otherotapcommand/queriesModels')
 module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -30,14 +30,14 @@ module.exports = new GraphQLObjectType({
         // devicemaster:devicemasterQuery.devicedMaster,
         reportingstatus:fdadevicereportingstatusQuery.reportingstatus,
         // fdadevicereportingstatus:fdadevicereportingstatusQuery.fdadevicereportingstatus,
-        otapcammand:otapcommandQuery.otapcommand,
-        // command:otapcommandQuery.command,
         customertype:customertypeQuery.customertype,
         // customer:customertypeQuery.customer,
         customer:customerQuery.customer,
         // Customers:customerQuery.Customers,
         customeraccountrelationshipQuery:customeraccountrelationshipQuery.customeraccountrelationship,
         // accountrelationship:customeraccountrelationshipQuery.accountrelationship,
+        otapcommand:otapcommandQuery.otapcommand,
+        // commandotap:otapcommandQuery.commandotap,
         otherotapcommand:otherotapcommandQuery.otherotapcommand,
         // Otapcommand:otherotapcommandQuery.Otapcommand
         

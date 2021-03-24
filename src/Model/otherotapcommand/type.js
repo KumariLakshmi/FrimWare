@@ -14,7 +14,7 @@ module.exports = new GraphQLObjectType({
     name: 'Otherotapcommand',
     description: 'a otherotapcommand',
     fields: {
-        ID: {
+        DeviceID: {
             type: new GraphQLNonNull(GraphQLString)
         },
         DeviceType: {

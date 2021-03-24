@@ -5,37 +5,34 @@ const { GraphQLList,
     GraphQLInt
 } = require('graphql')
 const type = require('./type')
-const mutation = require('./mutationsModels')
-const otapcommand = require('./otapcommandModels')
+// const mutation = require('./mutations')
+const Otapcommand = require('./otapcommandModels')
 
 // Defines the queries
 module.exports = {
     otapcommand: {
     type: new GraphQLList(type),
-    args: {
-        PacketID: {
-        type: GraphQLInt
+    PacketID:{
+        type:GraphQLInt
     },
-        DeviceID: {
-            type: GraphQLString
-        },
-        
-        Name:{
-            type: GraphQLString
-        },
-        Message:{
-            type: GraphQLString
-        }
-    },
-    resolve: otapcommand.findMatching.bind(otapcommand)
+    // DeviceID: {
+    //     type: GraphQLString
+    // },
+    // Name: {
+    //     type: GraphQLString
+    // },
+    // Message: {
+    //     type: GraphQLString
+    // },
+    resolve: Otapcommand.findMatching.bind(Otapcommand)
 },
-command: {
+commandotap: {
     type,
     args: {
         ID: {
             type: GraphQLID
         }
     },
-    resolve: otapcommand.getByID.bind(otapcommand)
+    resolve: Otapcommand.getByID.bind(Otapcommand)
 }
 }
