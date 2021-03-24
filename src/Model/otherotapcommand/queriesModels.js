@@ -35,7 +35,7 @@ module.exports = {
     // },
     resolve: Otherotapcommand.findMatching.bind(Otherotapcommand)
 },
-Otapcommand: {
+otapcommand: {
     type,
     args: {
         DeviceType: {

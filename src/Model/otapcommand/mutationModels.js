@@ -15,8 +15,7 @@ module.exports = {
     addotapcommand: {
         type,
         args: {
-            // DeviceType:   { type: new GraphQLNonNull(GraphQLString) },
-            // IsActive:  { type: new GraphQLNonNull(GraphQLBoolean) },
+            
             PacketID:{ type: new GraphQLNonNull(GraphQLInt) },
             DeviceID:{ type: new GraphQLNonNull(GraphQLString) },
             Name:{ type: new GraphQLNonNull(GraphQLString) },
@@ -28,8 +27,6 @@ module.exports = {
         type,
         args: {
             ID:     { type: GraphQLInt },
-            // DeviceType:   { type:new GraphQLNonNull(GraphQLString) },
-            // IsActive:  { type: new GraphQLNonNull(GraphQLBoolean) },
         },
         resolve: Otapcommand.updateEntry.bind(Otapcommand)
     }

@@ -39,7 +39,7 @@ module.exports = new GraphQLObjectType({
         otapcommand:otapcommandQuery.otapcommand,
         // commandotap:otapcommandQuery.commandotap,
         otherotapcommand:otherotapcommandQuery.otherotapcommand,
-        // Otapcommand:otherotapcommandQuery.Otapcommand
+        // otapcommand:otherotapcommandQuery.otapcommand
         
 
 
