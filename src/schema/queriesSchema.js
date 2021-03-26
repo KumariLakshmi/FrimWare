@@ -3,7 +3,7 @@ const { GraphQLObjectType } = require('graphql')
 
 const deviceQueres=require('../Model/devicetype/queriesModels')
 const DevicepacketsummaryQuery=require('../Model/fdadevicepacketsummary/queriesModels')
-const firmwaredetailcQuery=require('../Model/firmwaredetailC/queriesModels')
+// const firmwaredetailcQuery=require('../Model/firmwaredetailC/queriesModels')
 const firmwaredetailjavaQuery=require('../Model/firmwaredetailjava/queriesModels')
 const devicefirmwareinfoQuery=require('../Model/devicefirmwareinfo/queriesModels')
 const devicemasterQuery=require('../Model/devicemaster/queriesModels')
@@ -13,6 +13,7 @@ const customerQuery=require('../Model/customer/queriesModels')
 const customeraccountrelationshipQuery=require('../Model/customeraccountrelationship/queriesModels')
 const otapcommandQuery=require('../Model/otapcommand/queriesModels')
 const otherotapcommandQuery=require('../Model/otherotapcommand/queriesModels')
+const CQuery=require('../Model/searchbar/queriesModels')
 module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
@@ -20,7 +21,7 @@ module.exports = new GraphQLObjectType({
         devicetype: deviceQueres.devicetype,
         devicepacket:DevicepacketsummaryQuery.devicepacket,
         // summarypacket:DevicepacketsummaryQuery.packetsummary,
-        detailC:firmwaredetailcQuery.detailC,
+        // detailC:firmwaredetailcQuery.detailC,
         // firmwaredetailC:firmwaredetailcQuery.firmwaredetailC,
         detailJava:firmwaredetailjavaQuery.detailJava,
         // firmwaredetailjava:firmwaredetailjavaQuery.firmwaredetailjava,
@@ -41,7 +42,7 @@ module.exports = new GraphQLObjectType({
         otherotapcommand:otherotapcommandQuery.otherotapcommand,
         // otapcommand:otherotapcommandQuery.otapcommand
         
-
+        CQuery:CQuery.DetailC
 
 
     }

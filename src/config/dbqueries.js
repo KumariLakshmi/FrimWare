@@ -26,6 +26,7 @@ class dbqueries {
     static findAll() {
         return mysql.createQuery({
             query: `SELECT * FROM ??;`,
+            // query: `SELECT * FROM firmwaredetailc ;`,
             params: [this.TABLE_NAME]
         });
     }
