@@ -21,19 +21,3 @@ module.exports=dbqueries
 
 
 
-
-// otapcommand.findById = (DeviceID, result) => {
-    //     db.query(`SELECT * FROM otapcommand WHERE ID IN (${DeviceID})`, (err, res) => {
-    //       if (err) {
-    //         console.log("error: ", err);
-    //       }
-      
-    //       else 
-    //       {
-    //         console.log("otapcomand: ", res);
-    //       }
-      
-    //       // not found Customer with the id
-    //       result( "not found otapcommand", null);
-    //     });
-    //   };
