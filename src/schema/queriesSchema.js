@@ -11,18 +11,16 @@ const fdadevicereportingstatusQuery=require('../Model/fdadevicereportingstatus/q
 const customertypeQuery=require('../Model/customertype/queriesModels')
 const customerQuery=require('../Model/customer/queriesModels')
 const customeraccountrelationshipQuery=require('../Model/customeraccountrelationship/queriesModels')
-// const otapcommandQuery=require('../Model/otapcommand/queriesModels')
+const otapcommandQuery=require('../Model/otapcommand/queriesModels')
 const otherotapcommandQuery=require('../Model/otherotapcommand/queriesModels')
-// const CQuery=require('../Model/searchbar/queriesModels')
 
-// const newotapcommandQuery=require('../Model/newotapcomand/queriesModels')
 
 
 
 module.exports = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        Device:deviceQueres.device,
+        // Device:deviceQueres.device,
         devicetype: deviceQueres.devicetype,
         devicepacket:DevicepacketsummaryQuery.devicepacket,
         // summarypacket:DevicepacketsummaryQuery.packetsummary,
@@ -42,16 +40,12 @@ module.exports = new GraphQLObjectType({
         // Customers:customerQuery.Customers,
         customeraccountrelationshipQuery:customeraccountrelationshipQuery.customeraccountrelationship,
         // accountrelationship:customeraccountrelationshipQuery.accountrelationship,
-        // otapcommand:otapcommandQuery.otapcommand,
+        otapcommand:otapcommandQuery.otapcommand,
         // commandotap:otapcommandQuery.commandotap,
         otherotapcommand:otherotapcommandQuery.otherotapcommand,
         otapcommand:otherotapcommandQuery.otapcommand,
         
-        // CQuery:CQuery.DetailC
-       
-        // commandotapnew:newotapcommandQuery.commandotapnew
-            //  new:newotapcommandQuery.new,
-            //  command:newotapcommandQuery.command
+        
 
 
 
