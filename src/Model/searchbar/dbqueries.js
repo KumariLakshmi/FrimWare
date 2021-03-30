@@ -38,34 +38,34 @@ class dbqueries {
     //  * @param {Object} limit - Limits the amount of returned entries
     //  * @param {Object} order - Orders the returned entries using a provided field
     //  */
-    static findByFields({fields, limit, order}) {
+    // static findByFields({fields, limit, order}) {
         
-        let baseQuery = `SELECT * FROM ?? WHERE `
+    //     let baseQuery = `SELECT * FROM ?? WHERE `
 
-        let params = [this.TABLE_NAME] 
+    //     let params = [this.TABLE_NAME] 
 
-        Object.keys(fields).forEach((key, index) => {
-            baseQuery += `${key} = ?`
-            params.push(fields[key])
-            if (index + 1 !== Object.keys(fields).length) baseQuery += " AND "
-        })
+    //     Object.keys(fields).forEach((key, index) => {
+    //         baseQuery += `${key} = ?`
+    //         params.push(fields[key])
+    //         if (index + 1 !== Object.keys(fields).length) baseQuery += " AND "
+    //     })
 
-        if (order != null && order.by != null && order.direction != null) {
-            baseQuery += ` ORDER BY ??`
-            baseQuery += order.direction === sqlConstants.DESC ? " DESC" : " ASC"
-            params.push(order.by)
-        }
+    //     if (order != null && order.by != null && order.direction != null) {
+    //         baseQuery += ` ORDER BY ??`
+    //         baseQuery += order.direction === sqlConstants.DESC ? " DESC" : " ASC"
+    //         params.push(order.by)
+    //     }
 
-        if (limit != null && !isNaN(limit)) {
-            baseQuery += " LIMIT ?"
-            params.push(limit)
-        }
+    //     if (limit != null && !isNaN(limit)) {
+    //         baseQuery += " LIMIT ?"
+    //         params.push(limit)
+    //     }
 
-        return mysql.createQuery({
-            query: baseQuery,
-            params
-        })
-    }
+    //     return mysql.createQuery({
+    //         query: baseQuery,
+    //         params
+    //     })
+    // }
 
     // /**
     //  * Updates an entry

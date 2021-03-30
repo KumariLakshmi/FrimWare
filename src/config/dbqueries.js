@@ -15,7 +15,7 @@ class dbqueries {
     static async find(id) {
         return (await mysql.createQuery({
             query: `SELECT * FROM ?? WHERE ?? = ? LIMIT 1;`,
-            // query:`SELECT * FROM singledevice WHERE DeviceType IN (${DeviceType})`,
+            // query:`SELECT * FROM otapcommand WHERE DeviceID (${DeviceID})`,
             params: [this.TABLE_NAME, this.PRIMARY_KEY, id]
         })).shift()
     }
@@ -65,6 +65,17 @@ class dbqueries {
             params
         })
     }
+    static findById(DeviceID,result){
+        let baseQuery=`SELECT * FROM otapcommand WHERE DEviceID IN (${DeviceID})`
+        let params=[this.TABLE_NAME]
+
+        return mysql.createQuery({
+            baseQuery,
+            params
+        })
+    }
+    
+    
 
     /**
      * Updates an entry

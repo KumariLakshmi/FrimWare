@@ -6,7 +6,7 @@ const { GraphQLList,
 } = require('graphql')
 const type = require('./type')
 // const mutation = require('./mutations')
-const Otapcommand = require('./otapcommandModels')
+const Otapcommand = require('./otapcommandModels.js')
 
 // Defines the queries
 module.exports = {
