@@ -40,8 +40,11 @@ module.exports = new GraphQLObjectType({
         // Customers:customerQuery.Customers,
         customeraccountrelationshipQuery:customeraccountrelationshipQuery.customeraccountrelationship,
         // accountrelationship:customeraccountrelationshipQuery.accountrelationship,
-        otapcommand:otapcommandQuery.otapcommand,
-        // commandotap:otapcommandQuery.commandotap,
+        OtapCommand:otapcommandQuery.OtapCommand,
+        // CommandOtap:otapcommandQuery.CommandOtap,
+
+
+
         otherotapcommand:otherotapcommandQuery.otherotapcommand,
         otapcommand:otherotapcommandQuery.otapcommand,
         
