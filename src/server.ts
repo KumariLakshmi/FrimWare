@@ -1,6 +1,6 @@
-import  express from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
-import  cors from 'cors';
+import cors from 'cors';
 var Routes=require('./routes/app')
 class App {
     expressApp: any;
@@ -20,7 +20,7 @@ class App {
     }
 
     run() {
-        this.expressApp.listen(5080,() => {console.log("The port running successfully at 5080")
+        this.expressApp.listen(7080,() => {console.log("The port running successfully at 7080")
         })
     }
 }
