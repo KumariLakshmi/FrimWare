@@ -1,7 +1,12 @@
+
+console.log("server file");
+
+
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 var Routes=require('./routes/app')
+
 class App {
     expressApp: any;
     constructor() {
@@ -20,7 +25,7 @@ class App {
     }
 
     run() {
-        this.expressApp.listen(7080,() => {console.log("The port running successfully at 7080")
+        this.expressApp.listen(4080,() => {console.log("The port running successfully at 4080")
         })
     }
 }
