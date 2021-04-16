@@ -1,6 +1,6 @@
 import { GraphQLObjectType } from 'graphql'
 
-console.log("schema queries file");
+// console.log("schema queries file");
 
 const deviceQueres=require('../Model/devicetype/queriesModels')
 const DevicepacketsummaryQuery=require('../Model/fdadevicepacketsummary/queriesModels')
