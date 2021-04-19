@@ -56,6 +56,7 @@ module.exports = new GraphQLObjectType({
 
         otherotapcommand:otherotapcommandQuery.otherotapcommand,
         otapcommand:otherotapcommandQuery.otapcommand,
+        otapcommandDeviceID:otherotapcommandQuery.otapcommandDeviceID
         
         
 
