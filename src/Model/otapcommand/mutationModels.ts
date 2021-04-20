@@ -18,7 +18,7 @@ module.exports = {
             
             PacketID:{ type: new GraphQLNonNull(GraphQLInt) },
             DeviceType:{ type: new GraphQLNonNull(GraphQLString) },
-            commandName:{ type: new GraphQLNonNull(GraphQLString) },
+            CommandName:{ type: new GraphQLNonNull(GraphQLString) },
             MessageFormat:{ type: new GraphQLNonNull(GraphQLString) }
         },
         resolve: Otapcommand.createEntry.bind(Otapcommand)
