@@ -35,14 +35,22 @@ module.exports = {
     // },
     resolve: Otherotapcommand.findMatching.bind(Otherotapcommand)
 },
+// const otapType = new GraphQLObjectType({
+//     name: 'otap',
+//     args: {
+//       DeviceID: new GraphQLList(GraphQLString)
+//     },
+//   });
 otapcommand: {
     type:new GraphQLList(type),
     args: {
+        // DeviceID:new GraphQLList(GraphQLString)
         DeviceID: {
-            type: GraphQLString
+            type: new GraphQLList(GraphQLString)
         },
+        
         DeviceType:{
-            type:GraphQLString
+            type:new GraphQLList(GraphQLString)
           }
          
     },
