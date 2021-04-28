@@ -52,7 +52,7 @@ otapcommand: {
         },
         
         DeviceType:{
-            type: GraphQLInt
+            type: GraphQLString
           }
          
     },

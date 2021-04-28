@@ -21,7 +21,7 @@ module.exports = new GraphQLObjectType({
             type: new GraphQLNonNull(GraphQLInt)
         },
         DeviceType: {
-            type: new GraphQLNonNull(GraphQLInt)
+            type: new GraphQLNonNull(GraphQLString)
         },
         CommandName: {
             type: new GraphQLNonNull(GraphQLString)
