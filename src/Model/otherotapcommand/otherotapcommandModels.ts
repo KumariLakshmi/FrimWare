@@ -32,7 +32,7 @@ static async DeviceIDlist(_:any,{DeviceID}:any){
         // console.log("args",fields);
         
         // Returns early with all device if no criteria was passed
-        if (Object.keys(fields).length === 0) return this.findByFields()
+        if (Object.keys(fields).length === 0) return this.findAll()
         
         
         // Find matching device
